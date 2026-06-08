@@ -2,11 +2,18 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const express = require('express');
+const cors = require('cors');
 const authRoutes = require('./routes/auth.routes');
 const todoRoutes = require('./routes/todo.routes');
 const errorHandler = require('./middleware/error.middleware');
 
 const app = express();
+
+app.use(cors({
+  origin: 'http://localhost:5713', //react dev server url
+  credentials: true
+}));
+
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
