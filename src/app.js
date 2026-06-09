@@ -10,14 +10,14 @@ const errorHandler = require('./middleware/error.middleware');
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:5713',
+  origin: 'http://localhost:5173',
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)) // handle preflight requests
+app.options('/{*path}', cors(corsOptions)) // handle preflight requests
 
 app.use(express.json());
 
