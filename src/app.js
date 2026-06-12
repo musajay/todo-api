@@ -10,7 +10,10 @@ const errorHandler = require('./middleware/error.middleware');
 const app = express();
 
 const corsOptions = {
-  origin: 'http://localhost:5173',
+  origin: [
+    'http://localhost:5173',
+    'http://https://to-doclient.netlify.app/'
+  ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
