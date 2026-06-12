@@ -12,7 +12,7 @@ const app = express();
 const corsOptions = {
   origin: [
     'http://localhost:5173',
-    'http://https://to-doclient.netlify.app/'
+    'https://to-doclient.netlify.app'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
